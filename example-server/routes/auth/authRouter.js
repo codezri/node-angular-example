@@ -6,7 +6,8 @@ const config = require('../../config');
 
 
 router.post('/api/v1/login', authController.login);
-router.post('/api/v1/me', jwt({
+
+router.get('/api/v1/me', jwt({
     secret : config.secret
 }) ,authController.me);
 

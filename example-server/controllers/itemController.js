@@ -36,4 +36,16 @@ module.exports.insert = (req, res) => {
     
 }
 
+/**
+ * @access - auth user
+ */
+module.exports.delete = (req, res) => {
+    console.log(req.params._id);
+    Item.deleteOne({
+        _id : req.params._id
+    }, (err, result) => {
+        if(err) return res.status(500).json(err);
+        res.json(result);
+    });
+}
 

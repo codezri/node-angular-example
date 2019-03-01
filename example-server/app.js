@@ -5,11 +5,13 @@ const itemRouter = require('./routes/itemRouter');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const expresValidator = require('express-validator');
+const cors = require('cors');
 
 mongoose.connect('mongodb://localhost/api_test', {useNewUrlParser: true});
 
 const app = express();
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(expresValidator());
 app.use(authRouter);
