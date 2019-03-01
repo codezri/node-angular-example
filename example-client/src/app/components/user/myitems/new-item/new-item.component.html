@@ -1,0 +1,14 @@
+<br />
+<h5>Add new item</h5>
+<label>Name</label>
+<input type="text" class="form-control" [(ngModel)]="item.name"><br />
+<label>Price</label>
+<input type="number" class="form-control" [(ngModel)]="item.price">
+
+<hr />
+
+<div *ngIf="!!errorMessage">
+  <div class="alert alert-primary">{{ errorMessage }}</div>
+</div>
+
+<input type="button" class="btn btn-default" value="Add" (click)="addItem()" />

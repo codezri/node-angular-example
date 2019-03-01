@@ -1,0 +1,14 @@
+<div>
+  <div class="col-lg-4">
+  <input type="text" class="form-control" placeholder="username" [(ngModel)]="username" (keypress)="clearAlert()" /><br/>
+  <input type="password" class="form-control" placeholder="password" [(ngModel)]="password" (keypress)="clearAlert()"/>
+  </div>
+  <hr/>
+
+  <div *ngIf="!!errorMessage">
+    <div class="alert alert-primary">{{ errorMessage }}</div>
+  </div>
+
+  <input type="button" value="Login" (click)="userLogin()" class="btn btn-primary"/>
+</div>
+

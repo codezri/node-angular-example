@@ -1,0 +1,6 @@
+<h5>My Profile</h5>
+<br />
+<ul class="list-group" *ngIf="currentUser">
+  <li class="list-group-item">UID  : {{currentUser.id}}</li>
+  <li class="list-group-item">Name : {{currentUser.username}}</li>
+</ul>

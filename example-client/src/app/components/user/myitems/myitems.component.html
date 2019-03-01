@@ -1,0 +1,18 @@
+<h4>My Items</h4>
+
+<div *ngIf="isLoading">
+    Loading..
+</div>
+
+<div *ngIf="!isLoading">
+    <br/>
+    <ul class="list-group">
+        <li class="list-group-item" *ngFor="let item of items">{{ item.name }} <span style="color:orange">{{ item.price }}/=</span>
+            <span (click)="deleteItem(item._id)" style="float:right; cursor:pointer;" class="badge badge-danger">x</span></li>
+    </ul>
+    <div *ngIf="items.length==0" class="alert alert-info">No item found to display.</div>
+</div>
+
+<div class="col-4">
+    <app-new-item (loadItemsEmitter)="loadItemsList($event);"></app-new-item>
+</div>
